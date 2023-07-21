@@ -44,10 +44,6 @@ int child_proc(int connfd, long bufsize, useconds_t usleep_sec, int use_bz_uslee
 
     fprintfwt(stderr, "server: start\n");
 
-    if (set_so_sndbuf(connfd, 1*1024*1024) < 0) {
-        errx(1, "set_so_sndbuf");
-    }
-
     if (set_so_nodelay(connfd) < 0) {
         errx(1, "set_so_nodelay");
     }
